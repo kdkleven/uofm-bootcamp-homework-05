@@ -69,3 +69,22 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+
+.time {
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  color: grey;
+}
+
+.activity {
+  border: 1px solid #d3d3d3;
+  color: grey;
+}
+
+.save {
+  border: 1px solid #d3d3d3;
+}

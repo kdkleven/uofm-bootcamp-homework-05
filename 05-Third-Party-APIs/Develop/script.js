@@ -21,31 +21,60 @@
 // create JSON parser to store object to local storage
 // when save is clicked, save corresponding text field value to local storage
 
-
 $('#currentDay').text((moment().format('LLLL')));
 
-var s = {["9AM": "",  
-
-]}
-        9: "",
-        10: "",
-        11: "",
-        12: "",
-        1: "",
-        2: "",
-        3: "",
-        4: "",
-        5: ""
-
-function createTable () {
-    var i;
-    for (var key in s) {
-        if (s.hasOwnProperty(key)) {
-            i = document.getElementByID('#schedule').insertRow(key);    
-        }
-        var y = i.insertCell(key);
-        y.innerHTML = key;
+var schedule = [
+    {
+        time: "9 AM",
+        activity: "",
+        saved: false
+    },
+    {
+        time: "10 AM",
+        activity: "",
+        saved: false
+    },
+    {
+        time: "11 AM",
+        activity: "",
+        saved: false
+    },
+    {
+        time: "12 PM",
+        activity: "",
+        saved: false
+    },
+    {
+        time: "1 PM",
+        activity: "",
+        saved: false
+    },
+    {
+        time: "2 PM",
+        activity: "",
+        saved: false
+    },
+    {
+        time: "3 PM",
+        activity: "",
+        saved: false
+    },
+    {
+        time: "4 PM",
+        activity: "",
+        saved: false
+    },
+    {
+        time: "5 PM",
+        activity: "",
+        saved: false
     }
-}
+]
 
-createTable();
+
+
+
+
+$('.save').on("click", function() {
+    
+});

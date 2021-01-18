@@ -2,8 +2,8 @@
 
 //DESIGN
 // Create a list of 9 time slots (9am-5pm) 
-// Each row contains a text display, text entry field, and save button (1 row 3 columns)
-// Use insert row to build the schedule
+// Each row contains a text display, event entry field, and save button (9 rows 3 columns)
+// Use insert row to build the schedule?
     
 
 //ROWS
@@ -16,6 +16,8 @@
 // if now before moment().startOf('hour').fromNow(), style text fields grey
 // if now between moment().startOf('hour').fromNow() and moment().endtOf('hour').fromNow(), style RED
 // if now after moment().endOf('hour').fromNow() style text fields green
+
+//create a save function to write eventdata to local storage
 
 //SAVING
 // create JSON parser to store object to local storage
@@ -72,9 +74,42 @@ var schedule = [
 ]
 
 
+// function for event time-based styling
 
 
+//function to save to local storage
 
 $('.save').on("click", function() {
-    
+    storeEvents();
+
 });
+
+function renderEvents() {
+    for (var i = 0; i < schedule.length; i++) {
+        var events = schedule[i];
+
+        $('.time').html = schedule[i].time;
+        $('.activity').html = schedule[i].activity;
+
+        console.log(schedule[i].time);
+        console.log(schedule[i].activity);
+
+        $('.events').append(events);
+    }
+}
+
+// function to render from local storage
+function init() {
+    var storedEvents = JSON.parse(localStorage.getItem("schedule"));
+
+    if (storedEvents !== null) {
+        schedule = storedEvents;
+    }
+    renderEvents();
+}
+
+function storeEvents() {
+    localStorage.setItem("schedule", JSON.stringify(schedule));
+}
+
+init();

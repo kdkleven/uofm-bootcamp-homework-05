@@ -78,11 +78,13 @@ textarea{
   height: 100%;
   padding: 24px;
   color: grey;
+
 }
 
 .activity {
   border: 1px solid #d3d3d3;
   color: grey;
+  
 }
 
 .save {

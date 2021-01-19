@@ -1,6 +1,6 @@
 // Psuedocode
 
-//DESIGN
+//DESIG
 // Create a list of 9 time slots (9am-5pm) 
 // Each row contains a text display, event entry field, and save button (9 rows 3 columns)
 // Use insert row to build the schedule?
@@ -25,91 +25,36 @@
 
 $('#currentDay').text((moment().format('LLLL')));
 
-var schedule = [
-    {
-        time: "9 AM",
-        activity: "",
-        saved: false
-    },
-    {
-        time: "10 AM",
-        activity: "",
-        saved: false
-    },
-    {
-        time: "11 AM",
-        activity: "",
-        saved: false
-    },
-    {
-        time: "12 PM",
-        activity: "",
-        saved: false
-    },
-    {
-        time: "1 PM",
-        activity: "",
-        saved: false
-    },
-    {
-        time: "2 PM",
-        activity: "",
-        saved: false
-    },
-    {
-        time: "3 PM",
-        activity: "",
-        saved: false
-    },
-    {
-        time: "4 PM",
-        activity: "",
-        saved: false
-    },
-    {
-        time: "5 PM",
-        activity: "",
-        saved: false
+var scheduleText = "";
+var activityInput = document.querySelector('#activity-9');
+var saveButton = document.querySelector('#button-9');
+
+$('#button-9').on('click', function() {
+    console.log("save clicked");
+    scheduleText = activityInput.value;
+    
+    if (scheduleText =="") {
+        return;
     }
-]
 
+    console.log(scheduleText);
 
-// function for event time-based styling
-
-
-//function to save to local storage
-
-$('.save').on("click", function() {
-    storeEvents();
-
+    localStorage.setItem("schedule", scheduleText);
+    //ADD: push to array
+    // saveToArray();
+    // saveToStorage();
+    loadSchedule();
 });
 
-function renderEvents() {
-    for (var i = 0; i < schedule.length; i++) {
-        var events = schedule[i];
+function loadSchedule() {
+    console.log("load schedule");
 
-        $('.time').html = schedule[i].time;
-        $('.activity').html = schedule[i].activity;
-
-        console.log(schedule[i].time);
-        console.log(schedule[i].activity);
-
-        $('.events').append(events);
+    var storedSchedule = localStorage.getItem("schedule");
+   
+    if (storedSchedule !== null) {
+       scheduleText = storedSchedule;
     }
+    $('#activity-9').append(storedSchedule);
 }
 
-// function to render from local storage
-function init() {
-    var storedEvents = JSON.parse(localStorage.getItem("schedule"));
-
-    if (storedEvents !== null) {
-        schedule = storedEvents;
-    }
-    renderEvents();
-}
-
-function storeEvents() {
-    localStorage.setItem("schedule", JSON.stringify(schedule));
-}
-
-init();
+loadSchedule();

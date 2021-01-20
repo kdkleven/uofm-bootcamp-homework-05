@@ -25,21 +25,22 @@
 
 $('#currentDay').text((moment().format('LLLL')));
 
-var scheduleText = "";
-var activityInput = document.querySelector('#activity-9');
-var saveButton = document.querySelector('#button-9');
+var schedule = [];
 
-$('#button-9').on('click', function() {
-    console.log("save clicked");
-    scheduleText = activityInput.value;
+$('.save').on('click', function() {
+    var savedEvent = $('.activity').val().trim();
     
-    if (scheduleText =="") {
+    if (savedEvent == "") {
         return;
     }
+    
+    console.log(savedEvent);
+    
+    schedule.push(savedEvent);
+    
+    console.log(schedule);
 
-    console.log(scheduleText);
-
-    localStorage.setItem("schedule", scheduleText);
+    JSON.stringify(localStorage.setItem("schedule", savedEvent));
     //ADD: push to array
     // saveToArray();
     // saveToStorage();
@@ -49,12 +50,16 @@ $('#button-9').on('click', function() {
 function loadSchedule() {
     console.log("load schedule");
 
-    var storedSchedule = localStorage.getItem("schedule");
-   
-    if (storedSchedule !== null) {
-       scheduleText = storedSchedule;
+    var storedSchedule = JSON.parse(localStorage.getItem("schedule"));
+
+    for (var i = 0; i < schedule.length; i++) {
+        
+        if (storedSchedule !== null) {
+            savedEvent = storedSchedule;
+        }
+        
+        $('.activity').append(storedSchedule);
     }
-    $('#activity-9').append(storedSchedule);
 }
 
 loadSchedule();

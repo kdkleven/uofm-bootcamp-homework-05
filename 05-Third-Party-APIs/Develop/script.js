@@ -75,7 +75,13 @@ function clearSchedule() {
 //
 function displayTimes() {
     for (var t = 0; t < schedule.length; t++) {
-        currentTime = moment().format('HH');
+        // if (hours > 0 && hours <= 12) {
+        //     timeValue= "" + hours;
+        //   } else if (hours > 12) {
+        //     timeValue= "" + (hours - 12);
+        //   } else if (hours == 0) {
+        //     timeValue= "12";
+        //   }
         //
         $('#time-' + t).text(schedule[t].time);
     }
@@ -87,7 +93,8 @@ function colorChanger() {
     //    
     for (var c = 0; c < schedule.length; c++) {
         //
-        var d = $('#time-' + c).html();
+        currentTime = moment().format('HH');
+        var d = schedule[c].time;
         var a = $('#activity-' + c);
 
         //
@@ -117,12 +124,20 @@ function colorChanger() {
 }
 
 //
-function checkActivity() {
+function checkActivity(btnID) {
+    
+    console.log("This is the button ID: " + btnID);
+    
     for (var a = 0; a < schedule.length; a++) {
         //
-        var currentActivity = $('#activity-' + a).val().trim();
-        //
-        schedule[a].activity = currentActivity;
+        var currentActivity = $('#activity-' + a).val().trim();   
+        
+     
+
+        if (btnID === a) {
+            schedule[a].activity = currentActivity;
+            console.log("This was just saved" + currentActivity);
+        }
     }
 }
 
@@ -163,7 +178,12 @@ $('#clear').on('click', function () {
 //
 $('.save').on('click', function (event) {
     event.preventDefault();
-    checkActivity();
+    var btnID = $(this).attr('id');
+    btnID = parseInt(btnID.split("button-")[1]);
+    
+    //console.log(btnID);
+
+    checkActivity(btnID);
     saveSchedule();
     renderSchedule();
 });

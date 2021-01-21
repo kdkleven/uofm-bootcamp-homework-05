@@ -29,4 +29,4 @@ The following animation demonstrates the application functionality:
 ![day planner demo](05-Third-Party-APIs/Assets/05-third-party-apis-homework-demo.gif)
 
 ## The Deliverable
-<livelink>
+[Work Day Scheduler] (https://kdkleven.github.io/uofm-bootcamp-homework-05/05-Third-Party-APIs/Develop/index.html)

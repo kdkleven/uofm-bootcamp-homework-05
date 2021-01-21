@@ -68,7 +68,7 @@ var schedule = [
 
 //
 function clearSchedule() {
-    sessionStorage.clear();
+    localStorage.clear();
     $('.activity').empty();
 }
 
@@ -122,10 +122,6 @@ function checkActivity() {
         //
         var currentActivity = $('#activity-' + a).val().trim();
         //
-        if (currentActivity == "") {
-            return;
-        }
-        //
         schedule[a].activity = currentActivity;
     }
 }
@@ -133,7 +129,7 @@ function checkActivity() {
 //
 function saveSchedule() {
     //
-    sessionStorage.setItem("schedule", JSON.stringify(schedule));
+    localStorage.setItem("schedule", JSON.stringify(schedule));
 }
 
 // 
@@ -142,7 +138,7 @@ function renderSchedule() {
     displayTimes();
     colorChanger();
     //
-    var lastSchedule = JSON.parse(sessionStorage.getItem("schedule"));
+    var lastSchedule = JSON.parse(localStorage.getItem("schedule"));
     //
     for (var r = 0; r < schedule.length; r++) {
         //

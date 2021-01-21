@@ -1,6 +1,6 @@
 // Psuedocode
 
-//DESIG
+//DESIGN
 // Create a list of 9 time slots (9am-5pm) 
 // Each row contains a text display, event entry field, and save button (9 rows 3 columns)
 // Use insert row to build the schedule?

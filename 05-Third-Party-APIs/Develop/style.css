@@ -90,3 +90,11 @@ textarea{
 .save {
   border: 1px solid #d3d3d3;
 }
+
+#clear { 
+  margin: auto;
+  margin-bottom: 50px;
+  height: 40px;
+  position: relative;
+  top: 25%;
+}

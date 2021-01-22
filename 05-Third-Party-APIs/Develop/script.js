@@ -68,14 +68,6 @@ var schedule = [
     }
 ];
 
-// Clear the time slots of all activity slots and local storage
-function clearSchedule() {
-
-    localStorage.clear();
-    $('.activity').empty();
-
-}
-
 // display the time properties from the schedule object in the corresponding elements
 function displayTimes() {
 
@@ -205,9 +197,10 @@ function renderSchedule() {
 // clear the schedule when clicked
 $('#clear').on('click', function () {
 
-    // call the function to clear storage and the activity slots
-    clearSchedule();
-
+    // Clear the time slots of all activity slots and local storage
+    $('.activity').empty();
+    localStorage.clear();
+    
 });
 
 // save the activity when the save button is clicked

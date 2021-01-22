@@ -1,5 +1,5 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
@@ -14,10 +14,10 @@ textarea{
 
 .jumbotron {
   text-align: center;
-  background-color: transparent;
-  color: rgb(0, 0, 0);
+  background-color: black;
+  color:white;
   border-radius: 0;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid gold;
   padding: 2rem 2rem;
 }
 

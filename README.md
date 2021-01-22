@@ -15,13 +15,13 @@ Create a simple calendar application that allows a user to save events for each 
 
 ### How it Works
 * Open the planner
-* The current day is displayed at the top of the calendar
-* Scroll down
-* Time blocks for standard business hours are displayed
-* Each time block is color-coded to indicate whether it is in the past, present, or future
+* The current date and time is displayed at the top of the calendar
+* Time blocks for standard business hours are displayed beneath
+* Each time block is color-coded to indicate whether it is before (grey), or after (green), the current hour (red)
 * Click into a time block and enter an event
 * Click the save button for that time block
 * The text for that event is saved in local storage
+* Click the "Clear Activity" button to clear all activity on the page and in storage
 
 ### The Mock-up
 The following animation demonstrates the application functionality:

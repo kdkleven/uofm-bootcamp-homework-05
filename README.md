@@ -31,4 +31,4 @@ The following animation demonstrates the application functionality:
 ## The Deliverable
 <img src="05-Third-Party-APIs/Assets/kk_workday_screenshot.JPG" alt="my workday page" width="480"/>
 
-[Work Day Scheduler] (https://kdkleven.github.io/uofm-bootcamp-homework-05/05-Third-Party-APIs/Develop/index.html)
+[Work Day Scheduler] https://kdkleven.github.io/workdayScheduler/index.html

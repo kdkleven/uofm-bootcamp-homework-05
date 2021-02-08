@@ -26,9 +26,9 @@ Create a simple calendar application that allows a user to save events for each 
 ### The Mock-up
 The following animation demonstrates the application functionality:
 
-![day planner demo](05-Third-Party-APIs/Assets/05-third-party-apis-homework-demo.gif)
+![day planner demo](assets/05-third-party-apis-homework-demo.gif)
 
 ## The Deliverable
-<img src="05-Third-Party-APIs/Assets/kk_workday_screenshot.JPG" alt="my workday page" width="480"/>
+<img src="assets/kk_workday_screenshot.JPG" alt="my workday page" width="480"/>
 
 [Work Day Scheduler] https://kdkleven.github.io/workdayScheduler/index.html
